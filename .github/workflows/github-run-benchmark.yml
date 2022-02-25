@@ -1,0 +1,68 @@
+name: Run Benchmarks
+on: 
+  push:
+  pull_request:
+    types: [opened, reopened]
+jobs:
+  do-benchmarks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: List files in directory
+        run: |
+          find .
+      - name: Install prerequisites
+        run: |
+          for f in */install.sh; do 
+            cd "$(dirname "$f")"
+            sudo chmod +x install.sh
+            sudo ./install.sh
+            cd ..
+          done
+      - name: Compile everything
+        run: |
+          for f in */Makefile; do 
+            cd "$(dirname "$f")"
+            make
+            cd ..
+          done
+      - name: Run test data generator
+        run: |
+          chmod +x gen.sh
+          ./gen.sh > input.txt
+          head -n 3 input.txt
+          chmod +x compute.sh
+          ./compute.sh > output.txt
+          head -n 3 output.txt
+      - name: Run everything
+        run: |
+          for f in */run.sh; do
+            cd "$(dirname "$f")"
+            echo "run $(dirname "$f")"
+            sudo chmod +x run.sh
+            (time ./run.sh) 2> bench.txt
+            cd ..
+          done
+      - name: Compare results
+        run: |
+          for f in */result.txt; do
+            head -n 3 "$f"
+            DIFF=$(diff "$f" output.txt)
+            if [ "$DIFF" == "" ]; then
+              cd "$(dirname "$f")"
+              touch ok.txt
+              cd ..
+            fi
+          done
+      - name: Generate Readme
+        run: |
+          chmod +x gen_table.sh
+          ./gen_table.sh > TABLE.md
+          cat INTRO.md TABLE.md REST.md > README.md
+          cat TABLE.md
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add README.md
+          git commit -m "generate README.md"
+          git push
