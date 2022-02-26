@@ -41,7 +41,7 @@ The parser should respect mathematical precedence.  `( )` > `*` > `+ -`. The ope
 
 <details>
 <summary>Here is an example of <code>input.txt</code>:</summary>
-```
+<pre>
 8*(3)
 (7-9-2-6)+8
 10+7+(4)
@@ -52,12 +52,12 @@ The parser should respect mathematical precedence.  `( )` > `*` > `+ -`. The ope
 4*2-3-10
 3
 1
-```
+</pre>
 </details>
 
 <details>
 <summary>And the corresponding <code>output.txt</code>:</summary>
-```
+<pre>
 24
 -2
 21
@@ -68,7 +68,7 @@ The parser should respect mathematical precedence.  `( )` > `*` > `+ -`. The ope
 -5
 3
 1
-```
+</pre>
 </details>
 
 Submission
