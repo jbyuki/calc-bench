@@ -9,10 +9,10 @@ The goal is to implement the **same** program using **different** languages and 
 | --- | --- | --- | --- | --- |
 | JBYU01 | bison/yacc | jbyuki | 0m0.008s | :white_check_mark: |
 | JBYU02 | c++ | jbyuki | 0m0.031s | :white_check_mark: |
-| JBYU03 | c++ | jbyuki | 0m0.026s | :white_check_mark: |
+| JBYU03 | c++ | jbyuki | 0m0.028s | :white_check_mark: |
 | JBYU04 | python | jbyuki | 0m0.113s | :white_check_mark: |
 | JBYU05 | luajit | jbyuki | 0m0.022s | :white_check_mark: |
-| JBYU06 | javascript | jbyuki | 0m1.518s | :white_check_mark: |
+| JBYU06 | javascript | jbyuki | 0m0.434s | :white_check_mark: |
 
 Table of Contents
 -----------------
@@ -56,7 +56,7 @@ The parser should respect mathematical precedence.  `( )` > `*` > `+ -`. The ope
 
 <details>
 <summary>Here is an example of <code>input.txt</code>:</summary>
-```
+<pre>
 8*(3)
 (7-9-2-6)+8
 10+7+(4)
@@ -67,12 +67,12 @@ The parser should respect mathematical precedence.  `( )` > `*` > `+ -`. The ope
 4*2-3-10
 3
 1
-```
+</pre>
 </details>
 
 <details>
 <summary>And the corresponding <code>output.txt</code>:</summary>
-```
+<pre>
 24
 -2
 21
@@ -83,7 +83,7 @@ The parser should respect mathematical precedence.  `( )` > `*` > `+ -`. The ope
 -5
 3
 1
-```
+</pre>
 </details>
 
 Submission
