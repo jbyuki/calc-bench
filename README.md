@@ -132,9 +132,9 @@ Now onto the interesting part, the current results which are automatically gener
 
 | Dirname | Language | Author | Time | Passed |
 | --- | --- | --- | --- | --- |
-| JBYU01 | bison/yacc | jbyuki | 0m0.006s | :white_check_mark: |
-| JBYU02 | c++ | jbyuki | 0m0.029s | :white_check_mark: |
-| JBYU03 | c++ | jbyuki | 0m0.025s | :white_check_mark: |
+| JBYU01 | bison/yacc | jbyuki | 0m0.007s | :white_check_mark: |
+| JBYU02 | c++ | jbyuki | 0m0.030s | :white_check_mark: |
+| JBYU03 | c++ | jbyuki | 0m0.027s | :white_check_mark: |
 
 Credits
 -------
