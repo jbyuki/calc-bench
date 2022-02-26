@@ -7,11 +7,11 @@ The goal is to implement the **same** program using **different** languages and 
 
 | Dirname | Language | Author | Time | Passed |
 | --- | --- | --- | --- | --- |
-| JBYU01 | bison/yacc | jbyuki | 0m0.007s | :white_check_mark: |
-| JBYU02 | c++ | jbyuki | 0m0.034s | :white_check_mark: |
-| JBYU03 | c++ | jbyuki | 0m0.028s | :white_check_mark: |
-| JBYU04 | python | jbyuki | 0m0.118s | :white_check_mark: |
-| JBYU05 | luajit | jbyuki | 0m0.021s | :white_check_mark: |
+| JBYU01 | bison/yacc | jbyuki | 0m0.011s | :white_check_mark: |
+| JBYU02 | c++ | jbyuki | 0m0.035s | :white_check_mark: |
+| JBYU03 | c++ | jbyuki | 0m0.033s | :white_check_mark: |
+| JBYU04 | python | jbyuki | 0m0.123s | :white_check_mark: |
+| JBYU05 | luajit | jbyuki | 0m0.026s | :white_check_mark: |
 
 Table of Contents
 -----------------
@@ -19,7 +19,6 @@ Table of Contents
 * [Introduction](#introduction)
 * [Task](#intro)
 * [Submission](#submission)
-* [Results](#results)
 * [Credits](#credits)
 
 Introduction
@@ -132,11 +131,6 @@ AUTHOR_NAME
 ```
 
 The Github Action will scan for `info.txt` files so that it can put it alongside the benchmark time in the results table.
-
-Results
--------
-
-Now onto the interesting part, the current results which are automatically generated:
 
 Credits
 -------
