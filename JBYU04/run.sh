@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 calc.py < input.txt > result.txt
+python calc.py < input.txt > result.txt
