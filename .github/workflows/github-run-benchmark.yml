@@ -16,6 +16,7 @@ jobs:
         run: |
           for f in */install.sh; do 
             cd "$(dirname "$f")"
+            echo "$(dirname "$f")"
             sudo chmod +x install.sh
             sudo ./install.sh
             cd ..
@@ -49,10 +50,14 @@ jobs:
           for f in */result.txt; do
             head -n 3 "$f"
             DIFF=$(diff "$f" output.txt)
+            echo "$(dirname "$f")"
             if [ "$DIFF" == "" ]; then
               cd "$(dirname "$f")"
               touch ok.txt
               cd ..
+              echo "OK!"
+            else
+              echo "FAIL!"
             fi
           done
       - name: Generate Readme
