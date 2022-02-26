@@ -16,6 +16,7 @@ jobs:
         run: |
           for f in */install.sh; do 
             cd "$(dirname "$f")"
+            echo "$(dirname "$f")"
             sudo chmod +x install.sh
             sudo ./install.sh
             cd ..
