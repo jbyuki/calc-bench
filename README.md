@@ -7,12 +7,12 @@ The goal is to implement the **same** program using **different** languages and 
 
 | Dirname | Language | Author | Time | Passed |
 | --- | --- | --- | --- | --- |
-| JBYU01 | bison/yacc | jbyuki | 0m0.006s | :white_check_mark: |
-| JBYU02 | c++ | jbyuki | 0m0.029s | :white_check_mark: |
-| JBYU03 | c++ | jbyuki | 0m0.025s | :white_check_mark: |
-| JBYU04 | python | jbyuki | 0m0.089s | :white_check_mark: |
-| JBYU05 | luajit | jbyuki | 0m0.018s | :white_check_mark: |
-| JBYU06 | javascript | jbyuki | 0m0.305s | :white_check_mark: |
+| JBYU01 | bison/yacc | jbyuki | 0m0.008s | :white_check_mark: |
+| JBYU02 | c++ | jbyuki | 0m0.031s | :white_check_mark: |
+| JBYU03 | c++ | jbyuki | 0m0.026s | :white_check_mark: |
+| JBYU04 | python | jbyuki | 0m0.113s | :white_check_mark: |
+| JBYU05 | luajit | jbyuki | 0m0.022s | :white_check_mark: |
+| JBYU06 | javascript | jbyuki | 0m1.518s | :white_check_mark: |
 
 Table of Contents
 -----------------
