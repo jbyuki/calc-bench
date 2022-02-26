@@ -12,7 +12,7 @@ Introduction
 
 Why create this project?
 
-This project is primarily about benchmarking a parser. This was meant for my personal use, how to make fast text parser. The baseline will be the `bison/yacc` implementation. By progressively becoming better in parsing techniques, the goal is to write a parser which beats this baseline time. This surely won't be easy and maybe just dumb but why not try it.
+This project is primarily about benchmarking a parser. This was meant for my personal use, how to make fast text parser. The baseline will be the `bison/flex` implementation. By progressively becoming better in parsing techniques, the goal is to write a parser which beats this baseline time. This surely won't be easy and maybe just dumb but why not try it.
 
 The project is of course public. So anybody interesting in bringing a contribution is welcome. That's where `Github actions` come into play. By submitting the code to this repository, the program will be automatically compiled, run, checked and benchmarked against other implementations on the **same** environnement (or at least, to the extend of my knowledge, it seems so). So if you want to show your nice little program, this is a great platform to do so.
 

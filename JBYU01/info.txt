@@ -1,2 +1,2 @@
-bison/yacc
+bison/flex
 jbyuki
