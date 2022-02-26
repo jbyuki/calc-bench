@@ -5,6 +5,13 @@ Calc Bench
 
 The goal is to implement the **same** program using **different** languages and techniques and benchmark it **automatically** using `Github Actions`.
 
+| Dirname | Language | Author | Time | Passed |
+| --- | --- | --- | --- | --- |
+| JBYU01 | bison/yacc | jbyuki | 0m0.006s | :white_check_mark: |
+| JBYU02 | c++ | jbyuki | 0m0.030s | :white_check_mark: |
+| JBYU03 | c++ | jbyuki | 0m0.030s | :white_check_mark: |
+| JBYU04 | python | jbyuki | 0m0.101s | :white_check_mark: |
+
 Table of Contents
 -----------------
 
@@ -129,12 +136,6 @@ Results
 -------
 
 Now onto the interesting part, the current results which are automatically generated:
-
-| Dirname | Language | Author | Time | Passed |
-| --- | --- | --- | --- | --- |
-| JBYU01 | bison/yacc | jbyuki | 0m0.006s | :white_check_mark: |
-| JBYU02 | c++ | jbyuki | 0m0.030s | :white_check_mark: |
-| JBYU03 | c++ | jbyuki | 0m0.027s | :white_check_mark: |
 
 Credits
 -------
