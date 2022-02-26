@@ -8,8 +8,9 @@ The goal is to implement the **same** program using **different** languages and 
 | Dirname | Language | Author | Time | Passed |
 | --- | --- | --- | --- | --- |
 | JBYU01 | bison/yacc | jbyuki | 0m0.006s | :white_check_mark: |
-| JBYU02 | c++ | jbyuki | 0m0.025s | :white_check_mark: |
-| JBYU03 | c++ | jbyuki | 0m0.022s | :white_check_mark: |
+| JBYU02 | c++ | jbyuki | 0m0.029s | :white_check_mark: |
+| JBYU03 | c++ | jbyuki | 0m0.025s | :white_check_mark: |
+| JBYU04 | python | jbyuki | 0m0.088s | :white_check_mark: |
 
 Table of Contents
 -----------------
