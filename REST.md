@@ -5,7 +5,6 @@ Table of Contents
 * [Introduction](#introduction)
 * [Task](#intro)
 * [Submission](#submission)
-* [Results](#results)
 * [Credits](#credits)
 
 Introduction
@@ -118,11 +117,6 @@ AUTHOR_NAME
 ```
 
 The Github Action will scan for `info.txt` files so that it can put it alongside the benchmark time in the results table.
-
-Results
--------
-
-Now onto the interesting part, the current results which are automatically generated:
 
 Credits
 -------
