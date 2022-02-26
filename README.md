@@ -7,10 +7,11 @@ The goal is to implement the **same** program using **different** languages and 
 
 | Dirname | Language | Author | Time | Passed |
 | --- | --- | --- | --- | --- |
-| JBYU01 | bison/yacc | jbyuki | 0m0.007s | :white_check_mark: |
-| JBYU02 | c++ | jbyuki | 0m0.031s | :white_check_mark: |
-| JBYU03 | c++ | jbyuki | 0m0.026s | :white_check_mark: |
-| JBYU04 | python | jbyuki | 0m0.110s | :white_check_mark: |
+| JBYU01 | bison/yacc | jbyuki | 0m0.005s | :white_check_mark: |
+| JBYU02 | c++ | jbyuki | 0m0.026s | :white_check_mark: |
+| JBYU03 | c++ | jbyuki | 0m0.025s | :white_check_mark: |
+| JBYU04 | python | jbyuki | 0m0.090s | :white_check_mark: |
+| JBYU05 | luajit | jbyuki | 0m0.017s | :white_check_mark: |
 
 Table of Contents
 -----------------
