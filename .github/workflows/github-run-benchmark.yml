@@ -43,14 +43,15 @@ jobs:
             echo "run $(dirname "$f")"
             sudo chmod +x run.sh
             (time ./run.sh) 2> bench.txt
+            ls
             cd ..
           done
       - name: Compare results
         run: |
           for f in */result.txt; do
             head -n 3 "$f"
-            DIFF=$(diff "$f" output.txt)
             echo "$(dirname "$f")"
+            DIFF=$(diff "$f" output.txt)
             if [ "$DIFF" == "" ]; then
               cd "$(dirname "$f")"
               touch ok.txt
