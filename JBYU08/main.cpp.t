@@ -27,10 +27,16 @@ std::ifstream in("../input.txt");
 
 @parse_each_line_and_display_result+=
 std::string line;
+bool first = true;
 while(std::getline(in, line)) {
   std::string_view str = line;
   int result = exp(str);
-  std::cout << -result << std::endl;
+  if(first) {
+    std::cout << -result << std::endl;
+    first = false;
+  } else {
+    std::cout << result << std::endl;
+  }
 }
 
 @declare+=
