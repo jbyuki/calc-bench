@@ -9,11 +9,11 @@ The goal is to implement the **same** program using **different** languages and 
 | --- | --- | --- | --- | --- |
 | JBYU01 | bison/flex | jbyuki | 0m0.006s | :white_check_mark: |
 | JBYU02 | c++ | jbyuki | 0m0.030s | :white_check_mark: |
-| JBYU03 | c++ | jbyuki | 0m0.028s | :white_check_mark: |
-| JBYU04 | python | jbyuki | 0m0.093s | :white_check_mark: |
-| JBYU05 | luajit | jbyuki | 0m0.020s | :white_check_mark: |
-| JBYU06 | javascript | jbyuki | 0m1.865s | :white_check_mark: |
-| JBYU07 | c++ | jbyuki | 0m0.024s | :white_check_mark: |
+| JBYU03 | c++ | jbyuki | 0m0.026s | :white_check_mark: |
+| JBYU04 | python | jbyuki | 0m0.091s | :white_check_mark: |
+| JBYU05 | luajit | jbyuki | 0m0.019s | :white_check_mark: |
+| JBYU06 | javascript | jbyuki | 0m1.579s | :white_check_mark: |
+| JBYU07 | c++ | jbyuki | 0m0.023s | :white_check_mark: |
 
 Table of Contents
 -----------------
