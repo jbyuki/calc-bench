@@ -51,8 +51,8 @@ jobs:
           for f in */result.txt; do
             head -n 3 "$f"
             echo "$(dirname "$f")"
-            DIFF=$(diff "$f" output.txt)
-            if [ "$DIFF" == "" ]; then
+            DIFF=$(diff "$f" output.txt) || true
+            if [[ "$DIFF" == "" ]]; then
               cd "$(dirname "$f")"
               touch ok.txt
               cd ..
