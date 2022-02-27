@@ -52,7 +52,7 @@ jobs:
             head -n 3 "$f"
             echo "$(dirname "$f")"
             DIFF=$(diff "$f" output.txt)
-            if [ "$DIFF" == "" ]; then
+            if [[ "$DIFF" == "" ]]; then
               cd "$(dirname "$f")"
               touch ok.txt
               cd ..
