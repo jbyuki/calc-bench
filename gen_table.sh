@@ -1,8 +1,8 @@
 #!/bin/bash
 
 function table_header() {
-  echo "| Dirname | Language | Author | Time | Passed |"
-  echo "| --- | --- | --- | --- | --- |"
+  echo "| Dirname | Language | Author | Notes | Time | Passed |"
+  echo "| --- | --- | --- | --- | --- | --- |"
 }
 
 function table_entry() {
@@ -16,7 +16,7 @@ function table_entry() {
   fi
 
   readarray -t infos < info.txt
-  echo "| $(dirname "$f") | ${infos[0]} | ${infos[1]} | ${words[1]} | $passed |"
+  echo "| $(dirname "$f") | ${infos[0]} | ${infos[1]} | ${infos[2]} | ${words[1]} | $passed |"
 }
 
 table_header

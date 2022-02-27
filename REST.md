@@ -114,6 +114,7 @@ A convienent little file which should contain metadata about the program. For no
 ```
 LANGUAGE_NAME
 AUTHOR_NAME
+DESCRIPTION
 ```
 
 The Github Action will scan for `info.txt` files so that it can put it alongside the benchmark time in the results table.
