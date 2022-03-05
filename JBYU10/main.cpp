@@ -108,7 +108,7 @@ auto main() -> int
   while(fgets(line, 1024, stdin)) {
     tokens.clear();
 
-    for(int i=0; i<line.size();) {
+    for(int i=0;;) {
       switch(line[i]) {
       case '0':
       case '1':

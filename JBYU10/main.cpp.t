@@ -62,7 +62,7 @@ std::vector<Token> tokens;
 @tokenize_line+=
 tokens.clear();
 
-for(int i=0; i<line.size();) {
+for(int i=0;;) {
   switch(line[i]) {
   @if_character_is_number
   @if_character_is_parenthesis
