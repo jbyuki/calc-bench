@@ -7,14 +7,15 @@ The goal is to implement the **same** program using **different** languages and 
 
 | Dirname | Language | Author | Notes | Time | Passed |
 | --- | --- | --- | --- | --- | --- |
-| JBYU01 | bison/flex | jbyuki | - | 0m0.008s | :white_check_mark: |
-| JBYU02 | c++ | jbyuki | Pratt's parser (with the use of std::shared_ptr) | 0m0.034s | :white_check_mark: |
+| JBYU01 | bison/flex | jbyuki | - | 0m0.007s | :white_check_mark: |
+| JBYU02 | c++ | jbyuki | Pratt's parser (with the use of std::shared_ptr) | 0m0.031s | :white_check_mark: |
 | JBYU03 | c++ | jbyuki | Pratt's parser (without the use of std::shared_ptr) | 0m0.029s | :white_check_mark: |
-| JBYU04 | python | jbyuki | Use `eval()` | 0m0.112s | :white_check_mark: |
-| JBYU05 | luajit | jbyuki | Use `loadstring()` | 0m0.023s | :white_check_mark: |
-| JBYU06 | javascript | jbyuki | Use `eval()` | 0m0.409s | :white_check_mark: |
-| JBYU07 | c++ | jbyuki | Recursive descent parser | 0m0.023s | :white_check_mark: |
-| JBYU08 | c++ | jbyuki | Always fails | 0m0.026s | :x: |
+| JBYU04 | python | jbyuki | Use `eval()` | 0m0.113s | :white_check_mark: |
+| JBYU05 | luajit | jbyuki | Use `loadstring()` | 0m0.022s | :white_check_mark: |
+| JBYU06 | javascript | jbyuki | Use `eval()` | 0m2.580s | :white_check_mark: |
+| JBYU07 | c++ | jbyuki | Recursive descent parser | 0m0.024s | :white_check_mark: |
+| JBYU08 | c++ | jbyuki | Always fails | 0m0.024s | :x: |
+| JBYU09 | c++ | jbyuki | SLR Parser | 0m0.026s | :white_check_mark: |
 
 Table of Contents
 -----------------
