@@ -108,7 +108,8 @@ auto main() -> int
   while(fgets(line, 1024, stdin)) {
     tokens.clear();
 
-    for(int i=0;;) {
+    bool eol = false;
+    for(int i=0;!eol;) {
       switch(line[i]) {
       case '0':
       case '1':
@@ -184,6 +185,7 @@ auto main() -> int
       break;
 
       default:
+        eol = true;
         break;
       }
     }

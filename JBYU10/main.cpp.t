@@ -62,12 +62,14 @@ std::vector<Token> tokens;
 @tokenize_line+=
 tokens.clear();
 
-for(int i=0;;) {
+bool eol = false;
+for(int i=0;!eol;) {
   switch(line[i]) {
   @if_character_is_number
   @if_character_is_parenthesis
   @if_character_is_operator
   default:
+    eol = true;
     break;
   }
 }
