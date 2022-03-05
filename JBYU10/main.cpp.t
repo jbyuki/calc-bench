@@ -21,11 +21,12 @@ std::ifstream in("../input.txt");
 
 @includes+=
 #include <string>
-#include <iostream>
+#include <cstdio>
 
 @parse_each_line_and_display_result+=
-std::string line;
-while(std::getline(std::cin, line)) {
+char line[1024];
+
+while(fgets(line, 1024, stdin)) {
   std::cout << 0 << std::endl;
   // @tokenize_line
   // @append_ending_token
@@ -56,6 +57,9 @@ struct Token
 @global_variables+=
 std::vector<Token> tokens;
 
+@includes+=
+#include <stdio.h>
+
 @tokenize_line+=
 tokens.clear();
 
@@ -64,6 +68,8 @@ for(int i=0; i<line.size();) {
   @if_character_is_number
   @if_character_is_parenthesis
   @if_character_is_operator
+  default:
+    break;
   }
 }
 
@@ -90,7 +96,7 @@ do
 {
   res = 10*res + (int)(line[i]-'0');
   ++i;
-} while(i < line.size() && std::isdigit(line[i]));
+} while(std::isdigit(line[i]));
 
 @token_types+=
 NUM_TOKEN = 1,

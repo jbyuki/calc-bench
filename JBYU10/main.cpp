@@ -3,9 +3,11 @@
 #include <iostream>
 
 #include <string>
-#include <iostream>
+#include <cstdio>
 
 #include <vector>
+
+#include <stdio.h>
 
 
 struct Token
@@ -101,8 +103,9 @@ int left, right;
 auto main() -> int
 {
   // @open_input_file
-  std::string line;
-  while(std::getline(std::cin, line)) {
+  char line[1024];
+
+  while(fgets(line, 1024, stdin)) {
     std::cout << 0 << std::endl;
     // @tokenize_line
     // @append_ending_token
