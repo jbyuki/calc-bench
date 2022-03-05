@@ -27,19 +27,18 @@ std::ifstream in("../input.txt");
 char line[1024];
 
 while(fgets(line, 1024, stdin)) {
-  std::cout << 0 << std::endl;
-  // @tokenize_line
-  // @append_ending_token
+  @tokenize_line
+  @append_ending_token
 
-  // @init_states
-  // int i=0;
-  // while(true) {
-    // Token& s = tokens[i];
+  @init_states
+  int i=0;
+  while(true) {
+    Token& s = tokens[i];
 
-    // @if_action_is_shift
-    // @if_action_is_reduce
-    // @if_action_is_accept
-  // }
+    @if_action_is_shift
+    @if_action_is_reduce
+    @if_action_is_accept
+  }
 }
 
 @structs+=
