@@ -103,14 +103,16 @@ int left, right;
 auto main() -> int
 {
   // @open_input_file
-  // @read_all_at_once
-  std::string line;
-  while(std::getline(std::cin, line)) {
+  std::istreambuf_iterator<char> begin(std::cin), end;
+  std::string buffer(begin, end);
+
+  int m=0;
+  while(m<buffer.size()) {
     tokens.clear();
 
     bool eol = false;
-    for(int m=0; m<line.size()&&!eol;) {
-      switch(line[m]) {
+    for(;m<buffer.size()&&!eol;) {
+      switch(buffer[m]) {
       case '0':
       case '1':
       case '2':
@@ -125,9 +127,9 @@ auto main() -> int
         int res = 0;
         do
         {
-          res = 10*res + (int)(line[m]-'0');
+          res = 10*res + (int)(buffer[m]-'0');
           ++m;
-        } while(m < line.size() && std::isdigit(line[m]));
+        } while(m < buffer.size() && std::isdigit(buffer[m]));
 
         Token token;
         token.type = Token::NUM_TOKEN;

@@ -7,7 +7,7 @@
 auto main() -> int
 {
   // @open_input_file
-  // @read_all_at_once
+  @read_all_at_once
   @parse_each_line_and_display_result
 
 
@@ -30,8 +30,8 @@ std::string buffer(begin, end);
 #include <cstdio>
 
 @parse_each_line_and_display_result+=
-std::string line;
-while(std::getline(std::cin, line)) {
+int m=0;
+while(m<buffer.size()) {
   @tokenize_line
   @append_ending_token
 
@@ -68,8 +68,8 @@ std::vector<Token> tokens;
 tokens.clear();
 
 bool eol = false;
-for(int m=0; m<line.size()&&!eol;) {
-  switch(line[m]) {
+for(;m<buffer.size()&&!eol;) {
+  switch(buffer[m]) {
   @if_character_is_number
   @if_character_is_parenthesis
   @if_character_is_operator
@@ -101,9 +101,9 @@ break;
 @parse_number+=
 do
 {
-  res = 10*res + (int)(line[m]-'0');
+  res = 10*res + (int)(buffer[m]-'0');
   ++m;
-} while(m < line.size() && std::isdigit(line[m]));
+} while(m < buffer.size() && std::isdigit(buffer[m]));
 
 @token_types+=
 NUM_TOKEN = 1,
