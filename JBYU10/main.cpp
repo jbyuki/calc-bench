@@ -102,10 +102,10 @@ int left, right;
 
 auto main() -> int
 {
+  // @open_input_file
   std::istreambuf_iterator<char> begin(std::cin), end;
   std::string buffer(begin, end);
 
-  // @open_input_file
   int m=0;
   while(m<buffer.size()) {
     tokens.clear();
@@ -257,7 +257,7 @@ auto main() -> int
       }
 
       else {
-        std::cout << nums[0] << std::endl;
+        printf("%d\n", nums[0]);
         break;
       }
 

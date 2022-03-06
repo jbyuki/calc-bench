@@ -6,8 +6,8 @@
 
 auto main() -> int
 {
-  @read_all_at_once
   // @open_input_file
+  @read_all_at_once
   @parse_each_line_and_display_result
 
 
@@ -290,7 +290,7 @@ if(action>0) {
 
 @if_action_is_accept+=
 else {
-  std::cout << nums[0] << std::endl;
+  printf("%d\n", nums[0]);
   break;
 }
 
