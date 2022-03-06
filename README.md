@@ -8,15 +8,15 @@ The goal is to implement the **same** program using **different** languages and 
 | Dirname | Language | Author | Notes | Time | Passed |
 | --- | --- | --- | --- | --- | --- |
 | JBYU01 | bison/flex | jbyuki | - | 0m0.006s | :white_check_mark: |
-| JBYU02 | c++ | jbyuki | Pratt's parser (with the use of std::shared_ptr) | 0m0.027s | :white_check_mark: |
-| JBYU03 | c++ | jbyuki | Pratt's parser (without the use of std::shared_ptr) | 0m0.024s | :white_check_mark: |
-| JBYU04 | python | jbyuki | Use `eval()` | 0m0.120s | :white_check_mark: |
-| JBYU05 | luajit | jbyuki | Use `loadstring()` | 0m0.020s | :white_check_mark: |
-| JBYU06 | javascript | jbyuki | Use `eval()` | 0m2.885s | :white_check_mark: |
-| JBYU07 | c++ | jbyuki | Recursive descent parser | 0m0.022s | :white_check_mark: |
-| JBYU08 | c++ | jbyuki | Always fails | 0m0.021s | :x: |
-| JBYU09 | c++ | jbyuki | SLR Parser | 0m0.026s | :white_check_mark: |
-| JBYU10 | c++ | test | test | 0m0.029s | :white_check_mark: |
+| JBYU02 | c++ | jbyuki | Pratt's parser (with the use of std::shared_ptr) | 0m0.025s | :white_check_mark: |
+| JBYU03 | c++ | jbyuki | Pratt's parser (without the use of std::shared_ptr) | 0m0.022s | :white_check_mark: |
+| JBYU04 | python | jbyuki | Use `eval()` | 0m0.083s | :white_check_mark: |
+| JBYU05 | luajit | jbyuki | Use `loadstring()` | 0m0.016s | :white_check_mark: |
+| JBYU06 | javascript | jbyuki | Use `eval()` | 0m2.310s | :white_check_mark: |
+| JBYU07 | c++ | jbyuki | Recursive descent parser | 0m0.018s | :white_check_mark: |
+| JBYU08 | c++ | jbyuki | Always fails | 0m0.019s | :x: |
+| JBYU09 | c++ | jbyuki | SLR Parser | 0m0.021s | :white_check_mark: |
+| JBYU10 | c++ | jbyuki | SLR Parser (buffered input) | 0m0.007s | :white_check_mark: |
 
 Table of Contents
 -----------------
