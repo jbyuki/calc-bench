@@ -35,15 +35,17 @@ while(m<buffer.size()) {
   @tokenize_line
   @append_ending_token
 
-  @init_states
-  int i=0;
-  while(true) {
-    Token& s = tokens[i];
+  printf("0\n");
 
-    @if_action_is_shift
-    @if_action_is_reduce
-    @if_action_is_accept
-  }
+  // @init_states
+  // int i=0;
+  // while(true) {
+    // Token& s = tokens[i];
+
+    // @if_action_is_shift
+    // @if_action_is_reduce
+    // @if_action_is_accept
+  // }
 }
 
 @structs+=
