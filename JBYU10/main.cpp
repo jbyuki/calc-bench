@@ -198,17 +198,70 @@ auto main() -> int
     tokens.push_back(token);
 
 
-    printf("0\n");
+    stack.clear();
+    stack.push_back(0);
 
-    // @init_states
-    // int i=0;
-    // while(true) {
-      // Token& s = tokens[i];
+    nums.clear();
 
-      // @if_action_is_shift
-      // @if_action_is_reduce
-      // @if_action_is_accept
-    // }
+    int i=0;
+    while(true) {
+      Token& s = tokens[i];
+
+      int8_t t = stack.back();
+      int8_t action = action_table[t*7+s.type];
+
+      if(action>0) {
+        stack.push_back(action-1);
+        if(s.type == Token::NUM_TOKEN) {
+          nums.push_back(s.num);
+        }
+
+        ++i;
+      }
+
+      else if(action<0) {
+        int r = rhs_len[-(action+1)];
+
+        for(int8_t j=0; j<r; ++j) {
+          stack.pop_back();
+        }
+
+        t = stack.back();
+        stack.push_back(goto_table[t*3+lhs[-(action+1)]]-1);
+
+
+        switch(-(action+1)) {
+        // 0 E -> E + T
+        case 0:
+          right = nums.back();
+          nums.pop_back();
+          left = nums.back();
+          nums.pop_back();
+          nums.push_back(left+right);
+          break;
+        case 1: // 1 E -> E - T
+          right = nums.back();
+          nums.pop_back();
+          left = nums.back();
+          nums.pop_back();
+          nums.push_back(left-right);
+          break;
+        case 3: // 3 T -> T * F
+          right = nums.back();
+          nums.pop_back();
+          left = nums.back();
+          nums.pop_back();
+          nums.push_back(left*right);
+          break;
+        }
+      }
+
+      else {
+        printf("%d\n", nums[0]);
+        break;
+      }
+
+    }
   }
 
 
