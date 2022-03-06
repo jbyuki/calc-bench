@@ -102,15 +102,17 @@ int left, right;
 
 auto main() -> int
 {
-  // @open_input_file
-  char line[1024];
+  std::istreambuf_iterator<char> begin(std::cin), end;
+  std::string buffer(begin, end);
 
-  while(fgets(line, 1024, stdin)) {
+  // @open_input_file
+  int m=0;
+  while(m<buffer.size()) {
     tokens.clear();
 
     bool eol = false;
-    for(int i=0;!eol;) {
-      switch(line[i]) {
+    for(;m<buffer.size()&&!eol;) {
+      switch(buffer[m]) {
       case '0':
       case '1':
       case '2':
@@ -125,9 +127,9 @@ auto main() -> int
         int res = 0;
         do
         {
-          res = 10*res + (int)(line[i]-'0');
-          ++i;
-        } while(std::isdigit(line[i]));
+          res = 10*res + (int)(buffer[m]-'0');
+          ++m;
+        } while(m < buffer.size() && std::isdigit(buffer[m]));
 
         Token token;
         token.type = Token::NUM_TOKEN;
@@ -142,7 +144,7 @@ auto main() -> int
         Token token;
         token.type = Token::OPEN_PAR_TOKEN;
         tokens.push_back(token);
-        ++i;
+        ++m;
 
       }
       break;
@@ -152,7 +154,7 @@ auto main() -> int
         Token token;
         token.type = Token::CLOSE_PAR_TOKEN;
         tokens.push_back(token);
-        ++i;
+        ++m;
 
       }
       break;
@@ -162,7 +164,7 @@ auto main() -> int
         Token token;
         token.type = Token::ADD_TOKEN;
         tokens.push_back(token);
-        ++i;
+        ++m;
       }
       break;
 
@@ -171,7 +173,7 @@ auto main() -> int
         Token token;
         token.type = Token::SUB_TOKEN;
         tokens.push_back(token);
-        ++i;
+        ++m;
       }
       break;
 
@@ -180,12 +182,13 @@ auto main() -> int
         Token token;
         token.type = Token::MUL_TOKEN;
         tokens.push_back(token);
-        ++i;
+        ++m;
       }
       break;
 
       default:
         eol = true;
+        ++m;
         break;
       }
     }
@@ -260,6 +263,7 @@ auto main() -> int
 
     }
   }
+
 
 
   return 0;

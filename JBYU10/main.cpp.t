@@ -6,8 +6,10 @@
 
 auto main() -> int
 {
+  @read_all_at_once
   // @open_input_file
   @parse_each_line_and_display_result
+
 
   return 0;
 }
@@ -19,14 +21,17 @@ auto main() -> int
 @open_input_file+=
 std::ifstream in("../input.txt");
 
+@read_all_at_once+=
+std::istreambuf_iterator<char> begin(std::cin), end;
+std::string buffer(begin, end);
+
 @includes+=
 #include <string>
 #include <cstdio>
 
 @parse_each_line_and_display_result+=
-char line[1024];
-
-while(fgets(line, 1024, stdin)) {
+int m=0;
+while(m<buffer.size()) {
   @tokenize_line
   @append_ending_token
 
@@ -63,13 +68,14 @@ std::vector<Token> tokens;
 tokens.clear();
 
 bool eol = false;
-for(int i=0;!eol;) {
-  switch(line[i]) {
+for(;m<buffer.size()&&!eol;) {
+  switch(buffer[m]) {
   @if_character_is_number
   @if_character_is_parenthesis
   @if_character_is_operator
   default:
     eol = true;
+    ++m;
     break;
   }
 }
@@ -95,9 +101,9 @@ break;
 @parse_number+=
 do
 {
-  res = 10*res + (int)(line[i]-'0');
-  ++i;
-} while(std::isdigit(line[i]));
+  res = 10*res + (int)(buffer[m]-'0');
+  ++m;
+} while(m < buffer.size() && std::isdigit(buffer[m]));
 
 @token_types+=
 NUM_TOKEN = 1,
@@ -132,13 +138,13 @@ OPEN_PAR_TOKEN = 5,
 Token token;
 token.type = Token::OPEN_PAR_TOKEN;
 tokens.push_back(token);
-++i;
+++m;
 
 @create_close_paren_token+=
 Token token;
 token.type = Token::CLOSE_PAR_TOKEN;
 tokens.push_back(token);
-++i;
+++m;
 
 @token_types+=
 ADD_TOKEN = 3,
@@ -151,7 +157,7 @@ case '+':
   Token token;
   token.type = Token::ADD_TOKEN;
   tokens.push_back(token);
-  ++i;
+  ++m;
 }
 break;
 
@@ -160,7 +166,7 @@ case '-':
   Token token;
   token.type = Token::SUB_TOKEN;
   tokens.push_back(token);
-  ++i;
+  ++m;
 }
 break;
 
@@ -169,7 +175,7 @@ case '*':
   Token token;
   token.type = Token::MUL_TOKEN;
   tokens.push_back(token);
-  ++i;
+  ++m;
 }
 break;
 
