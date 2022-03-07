@@ -1,7 +1,7 @@
 all: calc
 
 calc: main.cpp
-	g++ -O2 $^ -o $@ -std=c++17 
+	g++ -std=c++17 -O2 $^ -o $@
 
 clean:
 	rm calc

@@ -9,6 +9,8 @@
 
 #include <stdio.h>
 
+#include <array>
+
 
 struct Token
 {
@@ -254,6 +256,7 @@ auto main() -> int
           nums.push_back(left*right);
           break;
         }
+
       }
 
       else {
@@ -263,7 +266,6 @@ auto main() -> int
 
     }
   }
-
 
 
   return 0;
