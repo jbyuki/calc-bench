@@ -105,12 +105,167 @@ int left, right;
 auto main() -> int
 {
   // @open_input_file
-  // @read_all_at_once
-  constexpr int BUFFER_SIZE = 4096;
-  std::array<char, BUFFER_SIZE> buffer;
-  while(fgets(buffer.data(), BUFFER_SIZE, stdin)) {
+  std::istreambuf_iterator<char> begin(std::cin), end;
+  std::string buffer(begin, end);
+
+  int m=0;
+  while(m<buffer.size()) {
+    tokens.clear();
+
+    bool eol = false;
+    for(;m<buffer.size()&&!eol;) {
+      switch(buffer[m]) {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
+      {
+        int res = 0;
+        do
+        {
+          res = 10*res + (int)(buffer[m]-'0');
+          ++m;
+        } while(m < buffer.size() && std::isdigit(buffer[m]));
+
+        Token token;
+        token.type = Token::NUM_TOKEN;
+        token.num = res;
+        tokens.push_back(token);
+
+      }
+      break;
+
+      case '(':
+      {
+        Token token;
+        token.type = Token::OPEN_PAR_TOKEN;
+        tokens.push_back(token);
+        ++m;
+
+      }
+      break;
+
+      case ')':
+      {
+        Token token;
+        token.type = Token::CLOSE_PAR_TOKEN;
+        tokens.push_back(token);
+        ++m;
+
+      }
+      break;
+
+      case '+':
+      {
+        Token token;
+        token.type = Token::ADD_TOKEN;
+        tokens.push_back(token);
+        ++m;
+      }
+      break;
+
+      case '-':
+      {
+        Token token;
+        token.type = Token::SUB_TOKEN;
+        tokens.push_back(token);
+        ++m;
+      }
+      break;
+
+      case '*':
+      {
+        Token token;
+        token.type = Token::MUL_TOKEN;
+        tokens.push_back(token);
+        ++m;
+      }
+      break;
+
+      default:
+        eol = true;
+        ++m;
+        break;
+      }
+    }
+
+    Token token;
+    token.type = Token::END_TOKEN;
+    tokens.push_back(token);
+
+
+    stack.clear();
+    stack.push_back(0);
+
+    nums.clear();
+
+    int i=0;
+    while(true) {
+      Token& s = tokens[i];
+
+      int8_t t = stack.back();
+      int8_t action = action_table[t*7+s.type];
+
+      if(action>0) {
+        stack.push_back(action-1);
+        if(s.type == Token::NUM_TOKEN) {
+          nums.push_back(s.num);
+        }
+
+        ++i;
+      }
+
+      else if(action<0) {
+        int r = rhs_len[-(action+1)];
+
+        for(int8_t j=0; j<r; ++j) {
+          stack.pop_back();
+        }
+
+        t = stack.back();
+        stack.push_back(goto_table[t*3+lhs[-(action+1)]]-1);
+
+
+        switch(-(action+1)) {
+        // 0 E -> E + T
+        case 0:
+          right = nums.back();
+          nums.pop_back();
+          left = nums.back();
+          nums.pop_back();
+          nums.push_back(left+right);
+          break;
+        case 1: // 1 E -> E - T
+          right = nums.back();
+          nums.pop_back();
+          left = nums.back();
+          nums.pop_back();
+          nums.push_back(left-right);
+          break;
+        case 3: // 3 T -> T * F
+          right = nums.back();
+          nums.pop_back();
+          left = nums.back();
+          nums.pop_back();
+          nums.push_back(left*right);
+          break;
+        }
+
+      }
+
+      else {
+        printf("%d\n", nums[0]);
+        break;
+      }
+
+    }
   }
-  // @parse_each_line_and_display_result
 
 
   return 0;
