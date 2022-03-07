@@ -108,7 +108,7 @@ auto main() -> int
   // @read_all_at_once
   constexpr int BUFFER_SIZE = 4096;
   std::array<char, BUFFER_SIZE> buffer;
-  while(fgets(buffer, BUFFER_SIZE, stdin)) {
+  while(fgets(buffer.data(), BUFFER_SIZE, stdin)) {
   }
   // @parse_each_line_and_display_result
 

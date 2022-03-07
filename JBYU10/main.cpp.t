@@ -341,5 +341,5 @@ case 3: // 3 T -> T * F
 @read_all_at_once_c+=
 constexpr int BUFFER_SIZE = 4096;
 std::array<char, BUFFER_SIZE> buffer;
-while(fgets(buffer, BUFFER_SIZE, stdin)) {
+while(fgets(buffer.data(), BUFFER_SIZE, stdin)) {
 }
