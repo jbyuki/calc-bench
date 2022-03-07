@@ -8,7 +8,7 @@ auto main() -> int
 {
   // @open_input_file
   @read_all_at_once
-  @parse_each_line_and_display_result
+  // @parse_each_line_and_display_result
 
 
   return 0;
