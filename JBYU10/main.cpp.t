@@ -7,7 +7,8 @@
 auto main() -> int
 {
   // @open_input_file
-  @read_all_at_once
+  // @read_all_at_once
+  @read_all_at_once_c
   // @parse_each_line_and_display_result
 
 
@@ -332,4 +333,13 @@ case 3: // 3 T -> T * F
   nums.pop_back();
   nums.push_back(left*right);
   break;
+}
+
+@includes+=
+#include <array>
+
+@read_all_at_once_c+=
+constexpr int BUFFER_SIZE = 4096;
+std::array<char, BUFFER_SIZE> buffer;
+while(fgets(buffer, BUFFER_SIZE, stdin)) {
 }

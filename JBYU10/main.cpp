@@ -9,6 +9,8 @@
 
 #include <stdio.h>
 
+#include <array>
+
 
 struct Token
 {
@@ -103,9 +105,11 @@ int left, right;
 auto main() -> int
 {
   // @open_input_file
-  std::istreambuf_iterator<char> begin(std::cin), end;
-  std::string buffer(begin, end);
-
+  // @read_all_at_once
+  constexpr int BUFFER_SIZE = 4096;
+  std::array<char, BUFFER_SIZE> buffer;
+  while(fgets(buffer, BUFFER_SIZE, stdin)) {
+  }
   // @parse_each_line_and_display_result
 
 
